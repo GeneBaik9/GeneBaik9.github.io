@@ -1,0 +1,58 @@
+:root {
+  color-scheme: dark;
+  --bg: #070b0d;
+  --surface: #0d1719;
+  --text: #d9ffe8;
+  --muted: #8caf9b;
+  --accent: #39ff88;
+  --border: #1d5b3b;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.site-header {
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5vw;
+  position: sticky;
+  top: 0;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+}
+
+.brand, nav a { color: var(--text); text-decoration: none; }
+.brand { color: var(--accent); font-weight: 700; letter-spacing: .12em; }
+nav { display: flex; gap: 1rem; }
+nav a:hover, nav a:focus-visible { color: var(--accent); }
+
+main { margin: 0 auto; max-width: 70rem; padding: 4rem 5vw; }
+.hero { min-height: 48vh; padding: 5rem 0 3rem; }
+.eyebrow { color: var(--accent); letter-spacing: .18em; }
+h1, h2 { line-height: 1.15; }
+h1 { font-size: clamp(2.5rem, 8vw, 6rem); margin: .5rem 0 1rem; }
+h2 { color: var(--accent); }
+.intro, .panel p { color: var(--muted); }
+.intro span, .game-placeholder span { color: var(--accent); }
+.panel { background: var(--surface); border: 1px solid var(--border); margin-top: 1rem; padding: 1.5rem; }
+footer { color: var(--muted); padding: 2rem 5vw; text-align: center; }
+
+@media (max-width: 48rem) {
+  .site-header { align-items: flex-start; flex-direction: column; gap: .75rem; }
+  nav { flex-wrap: wrap; }
+  main { padding-top: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
